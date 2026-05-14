@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوة خطوبة | مصطفى الديوب</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Real natural flower background -->
+    <div class="floral-bg"></div>
+    <!-- Soft overlay to make text readable -->
+    <div class="glass-overlay"></div>
+
+    <!-- Rose Petals Container (Managed by JS) -->
+    <div id="petals-container"></div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="section card slide-up" id="home">
+            <div class="bismillah pop-in">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
+            <p class="quran-verse fade-in-delayed">"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ"</p>
+            
+            <p class="invite-text pop-in" style="animation-delay: 0.5s;">تتشرف عائلتانا بدعوتكم لمشاركتنا فرحة خطوبتنا</p>
+            
+            <div class="names-row pop-in" style="animation-delay: 0.8s;">
+                <div class="person">
+                    <p class="family-name">حرم السيد مناف الديوب</p>
+                    <h1 class="names">مصطفى الديوب</h1>
+                </div>
+                
+                <div class="and-symbol-container pulse-anim">
+                    <span class="and-symbol">&</span>
+                </div>
+                
+                <div class="person">
+                    <p class="family-name">حرم السيد منير الديوب</p>
+                    <h1 class="names">كريمته</h1>
+                </div>
+            </div>
+        </header>
+
+        <!-- Countdown Section -->
+        <section class="section card slide-up" style="animation-delay: 0.2s;" id="countdown-section">
+            <h2 class="gold-title pop-in">متبقي على الفرحة</h2>
+            <div class="countdown" id="countdown">
+                <div class="time-box hover-float">
+                    <span id="days">00</span>
+                    <p>يوم</p>
+                </div>
+                <div class="time-box hover-float" style="animation-delay: 0.1s;">
+                    <span id="hours">00</span>
+                    <p>ساعة</p>
+                </div>
+                <div class="time-box hover-float" style="animation-delay: 0.2s;">
+                    <span id="minutes">00</span>
+                    <p>دقيقة</p>
+                </div>
+                <div class="time-box hover-float" style="animation-delay: 0.3s;">
+                    <span id="seconds">00</span>
+                    <p>ثانية</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Details Section -->
+        <section class="section card slide-up" style="animation-delay: 0.4s;" id="details">
+            <h2 class="gold-title pop-in">تفاصيل الحفل</h2>
+            
+            <div class="details-grid">
+                <div class="detail-item hover-float">
+                    <div class="icon-wrapper pulse-anim-slow"><i class="fas fa-calendar-alt icon"></i></div>
+                    <h3>الزمان</h3>
+                    <p>الجمعة، 29 مايو 2026</p>
+                    <p>الساعة 7:00 مساءً</p>
+                </div>
+
+                <div class="detail-item hover-float">
+                    <div class="icon-wrapper pulse-anim-slow"><i class="fas fa-map-marker-alt icon"></i></div>
+                    <h3>المكان</h3>
+                    <p>صالة الياسمين</p>
+                    <p>خان شيخون</p>
+                </div>
+            </div>
+
+            <div class="note-box pop-in" style="animation-delay: 0.6s;">
+                <i class="fas fa-leaf icon-small"></i>
+                <p>نأمل منكم تفهم رغبتنا بأن يكون الحفل للكبار فقط، جنة الأطفال منازلهم.</p>
+                <i class="fas fa-leaf icon-small" style="transform: scaleX(-1);"></i>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="section card slide-up" style="animation-delay: 0.6s;" id="rsvp">
+            <h2 class="gold-title pop-in">تأكيد الحضور</h2>
+            <p class="rsvp-text">يسعدنا حضوركم ومشاركتكم فرحتنا. نرجو تأكيد الحضور لتسهيل التنظيم.</p>
+            
+            <form id="rsvp-form" class="rsvp-form">
+                <div class="input-group">
+                    <input type="text" id="guest-name" placeholder="الاسم الكريم" required>
+                </div>
+                
+                <div class="input-group">
+                    <select id="guest-status" required>
+                        <option value="" disabled selected>هل ستشرفنا بالحضور؟</option>
+                        <option value="yes">نعم، سأحضر بكل سرور</option>
+                        <option value="no">أعتذر، لن أتمكن من الحضور</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <input type="number" id="guest-count" placeholder="عدد الأشخاص (إن وجد)" min="1" max="10">
+                </div>
+                
+                <button type="submit" class="btn-gold hover-float">
+                    <i class="fab fa-whatsapp"></i> إرسال عبر الواتساب
+                </button>
+            </form>
+        </section>
+        
+        <footer>
+            <p class="pop-in" style="animation-delay: 1s;">بانتظاركم لتكتمل فرحتنا 🌹</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

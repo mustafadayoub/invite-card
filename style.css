@@ -1,0 +1,445 @@
+/* =========================================
+   VARIABLES & THEME - NATURAL FLORAL LUXURY
+   ========================================= */
+   :root {
+    --bg-light: #fdfaf6;         
+    --card-bg: rgba(255, 255, 255, 0.85); /* Highly transparent for glass effect */
+    --gold-primary: #b08d57;     
+    --gold-light: #dfc89e;       
+    --gold-dark: #8c6a38;        
+    --text-main: #2b2b2b;        
+    --text-muted: #555555;       
+    --rose-petal: #f2cdd3;    
+}
+
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* =========================================
+   NATURAL BACKGROUND & PETALS
+   ========================================= */
+/* Highly natural real roses background */
+.floral-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1508804185872-d7bad1000cb7?auto=format&fit=crop&w=2000&q=80'); /* Natural realistic flowers */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; 
+    z-index: -3;
+    filter: brightness(1.1) contrast(0.9);
+}
+
+.glass-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(253, 250, 246, 0.4), rgba(253, 250, 246, 0.95));
+    z-index: -2;
+}
+
+/* Beautiful Floating Petals Effect */
+.petal {
+    position: fixed;
+    top: -50px;
+    background: radial-gradient(circle at 30% 30%, #fff0f3, #e8a7b3); /* Realistic 3D petal shading */
+    border-radius: 50% 0 50% 50%; /* Shape of a rose petal */
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: inset 2px 2px 5px rgba(255,255,255,0.7), 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* =========================================
+   LAYOUT & CONTAINERS
+   ========================================= */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glassmorphism Cards */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 3.5rem 2.5rem;
+    box-shadow: 0 20px 40px rgba(176, 141, 87, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+.bismillah {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 2.2rem;
+    color: var(--gold-dark);
+    margin-bottom: 1.5rem;
+}
+
+.quran-verse {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: var(--gold-primary);
+    margin-bottom: 3rem;
+    line-height: 2;
+}
+
+.invite-text {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Names Side by Side */
+.names-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.family-name {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    color: var(--gold-dark);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.names {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 3rem;
+    color: var(--gold-primary);
+    line-height: 1.2;
+    text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+}
+
+.and-symbol-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.and-symbol {
+    font-family: 'Amiri', serif;
+    color: #d89aa2; /* Natural rose color */
+    font-size: 2.5rem;
+}
+
+.gold-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 2.5rem;
+    color: var(--gold-dark);
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* =========================================
+   COUNTDOWN TIMER
+   ========================================= */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    direction: ltr;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--gold-light);
+    padding: 1.2rem 0.8rem;
+    min-width: 80px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.time-box span {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: 'Amiri', serif;
+    color: var(--gold-dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.time-box p {
+    font-size: 0.9rem;
+    color: var(--gold-primary);
+    margin: 0;
+    font-weight: 600;
+    direction: rtl;
+}
+
+/* =========================================
+   DETAILS SECTION
+   ========================================= */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--gold-light);
+    border-radius: 12px;
+}
+
+.icon-wrapper {
+    width: 65px;
+    height: 65px;
+    background: var(--bg-light);
+    border: 2px solid var(--gold-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 10px rgba(176, 141, 87, 0.1);
+}
+
+.icon {
+    font-size: 1.8rem;
+    color: var(--gold-primary);
+}
+
+.detail-item h3 {
+    font-size: 1.4rem;
+    color: var(--gold-dark);
+    margin-bottom: 0.5rem;
+    font-family: 'Amiri', serif;
+}
+
+.detail-item p {
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.note-box {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(242, 205, 211, 0.2);
+    border: 1px dashed var(--gold-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.icon-small {
+    color: #d89aa2;
+    font-size: 1.2rem;
+}
+
+.note-box p {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    color: var(--gold-dark);
+}
+
+/* =========================================
+   RSVP FORM
+   ========================================= */
+.rsvp-text {
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+}
+
+.rsvp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.input-group input, .input-group select {
+    width: 100%;
+    padding: 1.2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--gold-light);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 4px rgba(176, 141, 87, 0.15);
+}
+
+.btn-gold {
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    box-shadow: 0 8px 20px rgba(176, 141, 87, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0 2rem 0;
+    color: var(--gold-dark);
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+}
+
+/* =========================================
+   ADVANCED BEAUTIFUL ANIMATIONS
+   ========================================= */
+.slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: slideUpAnim 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.pop-in {
+    opacity: 0;
+    transform: scale(0.85);
+    animation: popInAnim 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.fade-in-delayed {
+    opacity: 0;
+    animation: fadeInAnim 1.2s ease-in forwards;
+}
+
+.pulse-anim {
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+.pulse-anim-slow {
+    animation: pulse 4s infinite ease-in-out;
+}
+
+.hover-float {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.hover-float:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(176, 141, 87, 0.2);
+}
+
+@keyframes slideUpAnim {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popInAnim {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeInAnim {
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* Falling Petal Animation */
+@keyframes fall {
+    0% { 
+        transform: translateY(-50px) rotate(0deg) scale(1); 
+        opacity: 0; 
+    }
+    10% { 
+        opacity: 1; 
+    }
+    80% { 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateY(110vh) rotate(720deg) scale(0.6); 
+        opacity: 0; 
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 600px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .rsvp-form { max-width: 100%; }
+    .names-row { gap: 0.5rem; }
+    .names { font-size: 1.8rem; }
+    .family-name { font-size: 0.9rem; }
+    .countdown { gap: 0.8rem; }
+    .time-box { min-width: 65px; padding: 1rem 0.5rem; }
+    .time-box span { font-size: 2rem; }
+    .card { padding: 2.5rem 1.2rem; }
+}
