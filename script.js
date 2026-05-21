@@ -25,30 +25,6 @@ const countdownFunction = setInterval(function() {
 }, 1000);
 
 
-// RSVP Form Submission to WhatsApp
-document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('guest-name').value;
-    const status = document.getElementById('guest-status').value;
-    const count = document.getElementById('guest-count').value || "1";
-    
-    // The specific WhatsApp number provided
-    const phoneNumber = "963968804006"; 
-    
-    let message = `مرحباً،\nأنا ${name}\n`;
-    
-    if (status === 'yes') {
-        message += `أؤكد حضوري لحفل الخطوبة بكل سرور 🌸\nعدد الأشخاص: ${count}`;
-    } else {
-        message += `أعتذر عن الحضور، وأتمنى لكم السعادة والتوفيق 🤍`;
-    }
-    
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    window.open(whatsappUrl, '_blank');
-});
-
 
 // Falling Rose Petals Animation Logic
 function createPetal() {
