@@ -354,6 +354,192 @@ footer {
 }
 
 /* =========================================
+   ULTRA LUXURIOUS ROYAL REVEAL
+   ========================================= */
+.ultra-luxury {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #0b0b0d; /* Extremely dark royal grey/black */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: all;
+    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.8s; /* Sweeps up like a curtain after fade */
+}
+
+/* Background Gold Dust / Stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 20px 30px, var(--gold-light), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 70px, var(--gold-light), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 50px 160px, var(--gold-light), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 90px 40px, var(--gold-light), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, var(--gold-primary), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 160px 120px, var(--gold-light), rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: starsFloating 100s linear infinite;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+@keyframes starsFloating {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-2000px); }
+}
+
+.luxury-center {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Golden Rings / Mandala */
+.gold-mandala {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring-1, .ring-2, .ring-3 {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+.ring-1 {
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid var(--gold-light);
+    border-bottom: 2px solid var(--gold-primary);
+    animation: spinRing 8s linear infinite;
+    box-shadow: 0 0 20px rgba(176, 141, 87, 0.2);
+}
+
+.ring-2 {
+    width: 80%;
+    height: 80%;
+    border-left: 2px solid var(--gold-primary);
+    border-right: 2px solid var(--gold-dark);
+    animation: spinRing 6s linear infinite reverse;
+}
+
+.ring-3 {
+    width: 60%;
+    height: 60%;
+    border: 1px dashed var(--gold-light);
+    animation: spinRing 12s linear infinite;
+}
+
+@keyframes spinRing {
+    100% { transform: rotate(360deg); }
+}
+
+/* Elegant Typography */
+.ultra-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 4rem;
+    background: linear-gradient(to right, #c5a059, #fcf6ba, #c5a059);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(176, 141, 87, 0.3);
+    animation: floatUpDown 4s ease-in-out infinite;
+    font-weight: normal;
+}
+
+.gold-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 0 auto 1.5rem auto;
+}
+
+.ultra-subtitle {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* The Button */
+.btn-ultra-gold {
+    margin-top: 4rem;
+    background: transparent;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-light);
+    padding: 1rem 3.5rem;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.btn-ultra-gold:hover {
+    background: rgba(176, 141, 87, 0.15);
+    box-shadow: 0 0 30px rgba(176, 141, 87, 0.5);
+    transform: scale(1.05);
+}
+
+.btn-glare {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    animation: glareBtn 4s infinite;
+}
+
+@keyframes glareBtn {
+    0%, 50% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* Transition to Main Page */
+.welcome-screen.opened .luxury-center {
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+.welcome-screen.opened {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+/* Pause animations until welcome screen is clicked */
+body:not(.play-animations) .slide-up,
+body:not(.play-animations) .pop-in,
+body:not(.play-animations) .fade-in-delayed {
+    animation: none !important;
+    opacity: 0;
+}
+
+/* =========================================
    ADVANCED BEAUTIFUL ANIMATIONS
    ========================================= */
 .slide-up {

@@ -1,3 +1,23 @@
+// Welcome Screen and Audio Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const openBtn = document.getElementById('open-invitation');
+    const welcomeScreen = document.getElementById('welcome-screen');
+    const bgMusic = document.getElementById('bg-music');
+
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            // Trigger double-door opening
+            welcomeScreen.classList.add('opened');
+            
+            // Play music
+            bgMusic.play().catch(e => console.log("Audio play failed:", e));
+            
+            // Start animations for the main content
+            document.body.classList.add('play-animations');
+        });
+    }
+});
+
 // Countdown Timer Logic
 // Set the date we're counting down to: May 29, 2026, 19:00:00
 const countDownDate = new Date("May 29, 2026 19:00:00").getTime();
